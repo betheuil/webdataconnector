@@ -1,7 +1,9 @@
-(function () {
+(function() {
+    // Create the connector object
     var myConnector = tableau.makeConnector();
 
-    myConnector.getSchema = function (schemaCallback) {
+    // Define the schema
+    myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "id",
             dataType: tableau.dataTypeEnum.string
@@ -27,6 +29,7 @@
         schemaCallback([tableSchema]);
     };
 
+    // Download the data
     myConnector.getData = function(table, doneCallback) {
         $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
             var feat = resp.features,
@@ -48,10 +51,12 @@
     };
 
     tableau.registerConnector(myConnector);
-    $(document).ready(function () {
-        $("#submitButton").click(function () {
-            tableau.connectionName = "USGS Earthquake Feed";
-            tableau.submit();
+
+    // Create event listeners for when the user submits the form
+    $(document).ready(function() {
+        $("#submitButton").click(function() {
+            tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
+            tableau.submit(); // This sends the connector object to Tableau
         });
     });
 })();
