@@ -1,28 +1,27 @@
 (function() {
     // Create the connector object
     var myConnector = tableau.makeConnector();
+    
+    // Init function for connector, called during every phase
+    myConnector.init = function(initCallback) {
+      tableau.authType = tableau.authTypeEnum.basic;
+      initCallback();
+    }
 
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            id: "id",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "mag",
-            alias: "magnitude",
+            id: "companynumber",
             dataType: tableau.dataTypeEnum.float
         }, {
-            id: "title",
-            alias: "title",
+            id: "name",
+            alias: "Name",
             dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "location",
-            dataType: tableau.dataTypeEnum.geometry
         }];
 
         var tableSchema = {
-            id: "earthquakeFeed",
-            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            id: "companies",
+            alias: "Full Company Information Report",
             columns: cols
         };
 
@@ -31,7 +30,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
+        $.getJSON("https://gateway.perfectinfo.com/sd-api/v1/companies/02758652", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
