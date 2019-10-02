@@ -30,8 +30,8 @@
       },
       success : function(response) {
           console.log(response);
-          var parsed_data = JSON.parse(response);
-          $('#companyID').val(parsed_data(0).number);
+          var parsed_data = JSON.parse(response(0));
+          $('#companyID').val(parsed_data.number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
