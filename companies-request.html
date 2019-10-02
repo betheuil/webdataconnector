@@ -16,7 +16,7 @@
     $.ajax({
       url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val(),
       type: 'POST',
-      dataType: 'json',
+      contentType: 'application/json',
       beforeSend: function (xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
       },
