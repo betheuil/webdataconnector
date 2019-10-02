@@ -31,7 +31,7 @@
       success : function(response) {
           console.log(response);
           var parsed_data = JSON.parse(response);
-          $('#companyID').val(parsed_data[0].number);
+          $('#companyID').val(parsed_data(0).number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
