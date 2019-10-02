@@ -20,7 +20,6 @@
       beforeSend: function (xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
       },
-      async: false,
       success : function(response) {
           console.log(response);
       },
