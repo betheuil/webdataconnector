@@ -25,7 +25,7 @@
           console.log(response);
       },
       error : function(xhr, status, error) {
-        var err = eval("("+ xhr.responseText + ")");
+        var err = xhr.responseText;
         console.log(err);                   
       }
     });
