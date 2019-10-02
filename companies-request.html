@@ -1,0 +1,18 @@
+<input id="companyName" type="text" value="Carillion"/>
+<input id="tokenField" type="hidden" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyIsImtpZCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyJ9.eyJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdGluZm8uY29tIiwiYXVkIjoiaHR0cHM6Ly9hdXRoLnBlcmZlY3RpbmZvLmNvbS9yZXNvdXJjZXMiLCJleHAiOjE1NzAwMTU5MTQsIm5iZiI6MTU3MDAxMjMxNCwiY2xpZW50X2lkIjoiZmUiLCJzY29wZSI6WyJwaUFwaSIsInBpRmVTZXJ2aWNlcyIsInBpUHJvZHVjdHMiXSwic3ViIjoiMjUwOTg1IiwiYXV0aF90aW1lIjoxNTcwMDEyMzE0LCJpZHAiOiJpZHNydiIsInByb2R1Y3QiOlsiRkUiLCJTRUMiXSwiYW1yIjpbInBhc3N3b3JkIl19.Foqol2toH4HV2ky0MNhz1QwjltBz--S4Tln17GCC2NvhjfqyMAyoZgl85l9Ltew5WD9D669nodfdMgPNN_gNN-Chu-uKnxVWj1xyQ0135uyapV7klN0r-Afd6SyJOspy71EjTiagcO6fjtjeBbEe5xk_9ljqbtgkv6DolLGqyCvqbMXX-QHPVtTjjf5grMWoeG6mMEJ8dYAsZCAEIxerZrirvuYT9HWTM0nc9mM0HsL54Y_rIftf7Cxy6irNJ7eq6okKfDDzwnkGTkLUcqEZbmSgxr_s3sid1_U94YXCB684KCF_hxqzICfCCmtrnwUiUgOQPdWn0FtmXRNby1M3sDEXbgNjHDyF1v6AuqjN8NVm66sYBL6H9s9gsp2UET0G14tjkNTokuNcPG06q3RJmUyjBR9khQHMn7-f55zEOoYSQNcSjxxFyI4TX2xtm4Uxz929Oxl0lyRgkLF3DwuQXjvEiy12fAMuuKy2-YdqLqrxEj6Ip6Jlt3auU_qundgcg1oKQvcPkxWIw0lkMauyAwBSvZoTZ5Kv6YbNStuEj82HjJI2_qDUY71f93IgtJw4XoxiLj8CQAOry6xSTP03PMUU61RW11qODvpcaaFqx7lqjiZyv3b73yonWk9RdyMXIiTo-1orYrs3C_DvbE8XFDsUkonBF7XYFuLVRamU3Fo"/>
+<input id="submitButton" type="button" />
+
+$('#submitButton').on('click',function(){
+    $.ajax({
+          url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val(),
+          type: 'POST',
+          data: { 
+                  firstName: $('#firstName').val(),
+                  lastName: $('#lastName').val()
+                },
+          contentType: 'application/json',
+          headers: {
+                    "Authorization": "Bearer " + $('#tokenField').val()
+                 },
+          async: false
+            }});
