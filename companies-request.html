@@ -10,6 +10,11 @@
       <input id="tokenField" type="hidden" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyIsImtpZCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyJ9.eyJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdGluZm8uY29tIiwiYXVkIjoiaHR0cHM6Ly9hdXRoLnBlcmZlY3RpbmZvLmNvbS9yZXNvdXJjZXMiLCJleHAiOjE1NzAwMjA0MzYsIm5iZiI6MTU3MDAxNjgzNiwiY2xpZW50X2lkIjoiZmUiLCJzY29wZSI6WyJwaUFwaSIsInBpRmVTZXJ2aWNlcyIsInBpUHJvZHVjdHMiXSwic3ViIjoiMjUwOTg1IiwiYXV0aF90aW1lIjoxNTcwMDE2ODM1LCJpZHAiOiJpZHNydiIsInByb2R1Y3QiOlsiRkUiLCJTRUMiXSwiYW1yIjpbInBhc3N3b3JkIl19.YKd85QqNczTF553Wc2zTmFuLny2kEEoPN_ttynyK2WSLQTdFTTs1INVgbN0pDd72KEGtkUFqDoM_qbD650aMVVqaxX6Ju3eDx70CTCFIOM_2BpgBlsnOA_Et7swPJCcFhS_XGTaayO1QCAgiMpLsgOdYCFTyDb3dt-4_88sYPJrdFuu41NVJMSNm33Ks-b67rNTJkOr9FW9EO40RWCxiIZBS9HXDLdKM3cPNebVAMmWLPL0E89268llurRLPRyBwq8ylJSlVNElKp24YIubISeQud3kJNJmcKWDHzrPI6dsyNhJMw3w9ZQYUzH5LYdrwag2kB8NFXmgmX1QfocuEzTIukKC-USnQg86DTx0br0gx3rx-yN8oKoEoyEF8e5bXiMF52sDie78cxgZY_J3JbL6PziuYQ6cEx-H18HNelPhvbAxfhzlb1eW4ODpxAHbE68YXUj4PGNVGSDMKIl_3vIF7o750uFQG3mcWSc2ypP588hMuLQfnN4kiS0cMnOiQurQWl2n5ef00GfVXeEzRD8qQ-6l5K0ev0-agiF7TD6P4O2F2nawlhgGthDDSq1FCAP88zX5t0XhGrv2nhdWdhPcSl0RmQZAz2SykosgJRyrbGMNeCqHVewMnkpAg6zOYPW_ZO9okpcHTyk2BU5y26ynj1ToPFd4xtxtTD0w1PzI"/>
       <input id="submitButton" type="button" />
     </form>
+    <br/>
+    <form>
+      <input id="companyID" type="text" value="02758652"/>
+      <input id="submitButton2" type="button" />
+    </form>
   </body>
 </html>
 
@@ -25,6 +30,24 @@
       },
       success : function(response) {
           console.log(response);
+      },
+      error : function(xhr, status, error) {
+        var err = xhr.responseText;
+        console.log(err);                   
+      }
+    });
+  });
+  $('#submitButton2').on('click',function(){
+    $.ajax({
+      url: "https://gateway.perfectinfo.com/sd-api/v1/companies/" + $('#companyID').val(),
+      type: 'GET',
+      contentType: 'application/x-www-form-urlencoded',
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
+      },
+      success : function(response) {
+          console.log(response);
+          $('#companyID').val(response[0].number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
