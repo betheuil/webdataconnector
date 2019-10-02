@@ -14,8 +14,8 @@
 <script>
   $('#submitButton').on('click',function(){
     $.ajax({
-      // url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val(),
-      url: "https://gateway.perfectinfo.com/sd-api/v1/companies/02758652",
+      url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val(),
+      // url: "https://gateway.perfectinfo.com/sd-api/v1/companies/02758652",
       type: 'GET',
       contentType: 'application/x-www-form-urlencoded',
       beforeSend: function (xhr) {
