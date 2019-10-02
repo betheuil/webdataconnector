@@ -30,6 +30,8 @@
       },
       success : function(response) {
           console.log(response);
+          var parsed_data = JSON.parse(response);
+          $('#companyID').val(parsed_data[0].number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
@@ -47,7 +49,6 @@
       },
       success : function(response) {
           console.log(response);
-          $('#companyID').val(response[0].number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
