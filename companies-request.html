@@ -65,10 +65,10 @@
       beforeSend: function (xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
       },
+      dataType: 'json',
       success : function(response) {
           console.log(response);
-          // var parsed_data = JSON.parse(response(0));
-          // $('#companyID').val(parsed_data.number);
+          $('#companyID').val(response(0).number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
