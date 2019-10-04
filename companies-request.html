@@ -76,27 +76,7 @@
       }
     });
   });
-  $('#companyFetch').on('click',function(){
-    $.ajax({
-      url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val() + "&pagesize=" + $('#results').val() + "&start=" + $('#page').val() + "",
-      // url: "https://gateway.perfectinfo.com/sd-api/v1/companies/02758652",
-      type: 'GET',
-      contentType: 'application/x-www-form-urlencoded',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
-      },
-      success : function(response) {
-          console.log(response);
-          // var parsed_data = JSON.parse(response(0));
-          // $('#companyID').val(parsed_data.number);
-      },
-      error : function(xhr, status, error) {
-        var err = xhr.responseText;
-        console.log(err);                   
-      }
-    });
-  });
-  $('#submitButton2').on('click',function(){
+  $('companyFetch').on('click',function(){
     $.ajax({
       url: "https://gateway.perfectinfo.com/sd-api/v1/companies/" + $('#companyID').val(),
       type: 'GET',
