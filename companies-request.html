@@ -45,9 +45,9 @@
         grant_type : $('#grant_type').val()
       },
       success : function(response) {
-          console.log(response);
-          // var parsed_data = JSON.parse(response(0));
-          // $('#companyID').val(parsed_data.number);
+        console.log(JSON.stringify(response));
+        var data = JSON.parse(response);
+        $("#tokenField").val(data.access_token);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
