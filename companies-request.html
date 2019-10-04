@@ -4,22 +4,78 @@
   </head>
   <body>
     <form>
-      <input id="companyName" type="text" value="Carillion"/>
-      <input id="results" type="text" value="100"/>
-      <input id="page" type="text" value="1"/>
-      <input id="tokenField" type="hidden" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyIsImtpZCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyJ9.eyJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdGluZm8uY29tIiwiYXVkIjoiaHR0cHM6Ly9hdXRoLnBlcmZlY3RpbmZvLmNvbS9yZXNvdXJjZXMiLCJleHAiOjE1NzAyMDA5NTIsIm5iZiI6MTU3MDE5NzM1MiwiY2xpZW50X2lkIjoiZmUiLCJzY29wZSI6WyJwaUFwaSIsInBpRmVTZXJ2aWNlcyIsInBpUHJvZHVjdHMiXSwic3ViIjoiMjUwOTg1IiwiYXV0aF90aW1lIjoxNTcwMTk3MzUyLCJpZHAiOiJpZHNydiIsInByb2R1Y3QiOlsiRkUiLCJTRUMiXSwiYW1yIjpbInBhc3N3b3JkIl19.Sq8HthFll8Hx3TwYfz5l4os63rLG03I0MVLtAnj47u-qBcZZa5mUqGnsjdikNn7srttPpIZYDEi6tELYKHoY5tDXWDsgQRx7_e1qosOB2GCh2bwq2U8GfsDh5k1xE3q1qIkHbxeSX4OhM7WiuCrXaVib9zOFa3K9DQmSeIQxB9YBPpo88U1bwcUh8kN53DgwkT2iPOSvVdCCo8Trp_zmWKlx4MfwGSgiVuvzvQh16XiysMzxMZGswXEI3Z2j5CFyx14qxcWjSZP-Prv0NAvi4IkmJqwCHp79zjkgvQnGyc7Pm1IiycdR61RU9pqHNX03x_jQosVu6MBl01TAfUKu7qpLOgeQRJajupWJC3a1df0oJlRYcBUVoXB5tbLNdlkk7tGI7zEGcjypxzqLasUGrpZwmqLjGIfPjumcRudnjB1eCLvtYmqfv78sjclSW5Z-uzJ7FTf9t2Q5tASPsOXZK6ddcgl4hqrWAkHRbCu7rX4PB6anNdL7K1uGF97F1uv6HxN2qX5AsnoSgmsYoxiHcCKCRMxEn0PUj3TVtEgoDai9lHm53q4ERW3o6qlmrEkRxlwthTnIP-UAgHeVIFikRAQUiBNkLUDNKfKtx1ZSWEosFLHRP6np413ZLIkoa7NfiJP_TnjPLjozfRYuSaqiKUOb_bOuKF7xB6PgkJBnqmE"/>
-      <input id="submitButton" type="button" />
+      <p>Token grant</p>
+      <input id="client_id" type="text" value="fe"><br/>
+      <input id="scope" type="text" value="piApi piProducts piFeServices"><br/>
+      <input id="client_secret" type="text" value="{23AD2F0B-D2C2-4AA7-9837-08584E7162C6}"><br/>
+      <input id="username" type="text" value="api.sd@deloitte.com"><br/>
+      <input id="password" type="password" value="deloitte"><br/>
+      <input id="grant_type" type="text" value="password"><br/>
+      <input id="authButton" type="button" /><br/>
+    </form>
+    <form>
+      <p>Company search</p>
+      <input id="companyName" type="text" value="Carillion"/><br/>
+      <input id="results" type="text" value="100"/><br/>
+      <input id="page" type="text" value="1"/><br/>
+      <input id="tokenField" type="hidden" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyIsImtpZCI6IlprS1JOdlhFeWNGQmkxN1QzYlZhX2VtLVJMZyJ9.eyJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdGluZm8uY29tIiwiYXVkIjoiaHR0cHM6Ly9hdXRoLnBlcmZlY3RpbmZvLmNvbS9yZXNvdXJjZXMiLCJleHAiOjE1NzAyMDA5NTIsIm5iZiI6MTU3MDE5NzM1MiwiY2xpZW50X2lkIjoiZmUiLCJzY29wZSI6WyJwaUFwaSIsInBpRmVTZXJ2aWNlcyIsInBpUHJvZHVjdHMiXSwic3ViIjoiMjUwOTg1IiwiYXV0aF90aW1lIjoxNTcwMTk3MzUyLCJpZHAiOiJpZHNydiIsInByb2R1Y3QiOlsiRkUiLCJTRUMiXSwiYW1yIjpbInBhc3N3b3JkIl19.Sq8HthFll8Hx3TwYfz5l4os63rLG03I0MVLtAnj47u-qBcZZa5mUqGnsjdikNn7srttPpIZYDEi6tELYKHoY5tDXWDsgQRx7_e1qosOB2GCh2bwq2U8GfsDh5k1xE3q1qIkHbxeSX4OhM7WiuCrXaVib9zOFa3K9DQmSeIQxB9YBPpo88U1bwcUh8kN53DgwkT2iPOSvVdCCo8Trp_zmWKlx4MfwGSgiVuvzvQh16XiysMzxMZGswXEI3Z2j5CFyx14qxcWjSZP-Prv0NAvi4IkmJqwCHp79zjkgvQnGyc7Pm1IiycdR61RU9pqHNX03x_jQosVu6MBl01TAfUKu7qpLOgeQRJajupWJC3a1df0oJlRYcBUVoXB5tbLNdlkk7tGI7zEGcjypxzqLasUGrpZwmqLjGIfPjumcRudnjB1eCLvtYmqfv78sjclSW5Z-uzJ7FTf9t2Q5tASPsOXZK6ddcgl4hqrWAkHRbCu7rX4PB6anNdL7K1uGF97F1uv6HxN2qX5AsnoSgmsYoxiHcCKCRMxEn0PUj3TVtEgoDai9lHm53q4ERW3o6qlmrEkRxlwthTnIP-UAgHeVIFikRAQUiBNkLUDNKfKtx1ZSWEosFLHRP6np413ZLIkoa7NfiJP_TnjPLjozfRYuSaqiKUOb_bOuKF7xB6PgkJBnqmE"/><br/>
+      <input id="companySearch" type="button" /><br/>
     </form>
     <br/>
     <form>
-      <input id="companyID" type="text" value="02758652"/>
-      <input id="submitButton2" type="button" />
+      <p>Company data extract</p>
+      <input id="companyID" type="text" value="02758652"/><br/>
+      <input id="companyFetch" type="button" />
     </form>
   </body>
 </html>
 
 <script>
-  $('#submitButton').on('click',function(){
+  $('#authButton').on('click',function(){
+    $.ajax({
+      url: "https://auth.perfectinfo.com/connect/token",
+      type: 'POST',
+      contentType: 'application/x-www-form-urlencoded',
+      data : {
+        client_id : $('#client_id').val(),
+        scope : $('#scope').val(),
+        client_secret : $('#client_secret').val(),
+        username : $('#username').val(),
+        password : $('#password').val(),
+        grant_type : $('#grant_type').val()
+      },
+      success : function(response) {
+          console.log(response);
+          // var parsed_data = JSON.parse(response(0));
+          // $('#companyID').val(parsed_data.number);
+      },
+      error : function(xhr, status, error) {
+        var err = xhr.responseText;
+        console.log(err);                   
+      }
+    });
+  });
+  $('#companySearch').on('click',function(){
+    $.ajax({
+      url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val() + "&pagesize=" + $('#results').val() + "&start=" + $('#page').val() + "",
+      // url: "https://gateway.perfectinfo.com/sd-api/v1/companies/02758652",
+      type: 'GET',
+      contentType: 'application/x-www-form-urlencoded',
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
+      },
+      success : function(response) {
+          console.log(response);
+          // var parsed_data = JSON.parse(response(0));
+          // $('#companyID').val(parsed_data.number);
+      },
+      error : function(xhr, status, error) {
+        var err = xhr.responseText;
+        console.log(err);                   
+      }
+    });
+  });
+  $('#companyFetch').on('click',function(){
     $.ajax({
       url: "https://gateway.perfectinfo.com/sd-api/v1/companies?name=" + $('#companyName').val() + "&pagesize=" + $('#results').val() + "&start=" + $('#page').val() + "",
       // url: "https://gateway.perfectinfo.com/sd-api/v1/companies/02758652",
