@@ -44,11 +44,11 @@
         password : $('#password').val(),
         grant_type : $('#grant_type').val()
       },
+      dataType: 'json',
       success : function(response) {
         console.log("Token:");
         console.log(JSON.stringify(response));
-        var data = JSON.parse(response);
-        $("#tokenField").val(data.access_token);
+        $("#tokenField").val(response.access_token);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
