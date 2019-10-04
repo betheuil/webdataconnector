@@ -78,16 +78,14 @@
   });
   $('companyFetch').on('click',function(){
     $.ajax({
-      url: "https://gateway.perfectinfo.com/sd-api/v1/companies/" + $('#companyID').val().toString(),
+      url: "https://gateway.perfectinfo.com/sd-api/v1/companies/" + $('#companyID').val(),
       type: 'GET',
       contentType: 'application/x-www-form-urlencoded',
       beforeSend: function (xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + $('#tokenField').val());
       },
-      dataType: 'json',
       success : function(response) {
           console.log(response);
-         // $('#companyID').val(response[0].number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
