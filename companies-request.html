@@ -68,7 +68,7 @@
       dataType: 'json',
       success : function(response) {
           console.log(response);
-          $('#companyID').val(response(0).number);
+          $('#companyID').val(response[0].number);
       },
       error : function(xhr, status, error) {
         var err = xhr.responseText;
