@@ -56,7 +56,7 @@
       }
     });
   });
-  $('companyFetch').on('click',function(){
+  $('#companyFetch').on('click',function(){
     $.ajax({
       url: "https://gateway.perfectinfo.com/sd-api/v1/companies/" + $('#companyID').val(),
       type: 'GET',
